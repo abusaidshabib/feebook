@@ -1,8 +1,11 @@
 from pathlib import Path
+import os
+from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-SECRET_KEY = "django-insecure-+rvjyj)7a&m_3(@x+$kfov0qiu^4mp(u7&w4u&07*jd*+a^q^v"
+# django-insecure-+rvjyj)7a&m_3(@x+$kfov0qiu^4mp(u7&w4u&07*jd*+a^q^v
+SECRET_KEY = config("DJ_SECRET_KEY")
 
 DEBUG = True
 
@@ -17,16 +20,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tailwind",
-    'theme',
-    'django_browser_reload'
 ]
 
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -36,7 +31,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "feebook.urls"
