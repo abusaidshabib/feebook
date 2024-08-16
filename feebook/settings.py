@@ -23,7 +23,12 @@ INSTALLED_APPS = [
     "authentication",
     "Contents",
     "Ecommerce",
-    "Message"
+    "Message",
+
+#tailwind
+    'tailwind',
+    'theme',
+    'django_browser_reload'
 ]
 
 AUTH_USER_MODEL = "authentication.CustomUser"
@@ -37,6 +42,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+      "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "feebook.urls"
@@ -103,3 +109,12 @@ STATIC_URL = "static/"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# tailwind
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
