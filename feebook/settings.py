@@ -6,6 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # django-insecure-+rvjyj)7a&m_3(@x+$kfov0qiu^4mp(u7&w4u&07*jd*+a^q^v
 SECRET_KEY = config("DJ_SECRET_KEY")
+TEMPLATE_DIR = BASE_DIR / "theme/templates"
+STATIC_DIR = BASE_DIR / "theme/static"
 
 DEBUG = True
 
@@ -50,7 +52,7 @@ ROOT_URLCONF = "feebook.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -106,6 +108,7 @@ USE_TZ = True
 
 
 STATIC_URL = "static/"
+STATICFILES_DIR = [STATIC_DIR]
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
